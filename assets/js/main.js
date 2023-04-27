@@ -18,18 +18,24 @@ function convertPokemonToLi(pokemon) {
                     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg"
                         alt="${pokemon.name}">
                 </div>
-
             </li>
     `
 }
 
-fetch(url)
-    .then((response) => response.json())
-    .then((jsonBody) => jsonBody.results)
-    .then((pokemonList) => {
-       for (let i = 0; i < pokemonList.length; i++) {
-        const pokemon = pokemonList[i];
-        console.log(convertPokemonToLi(pokemon))
-       }
-    })
-    .catch((error) => console.error(error))
+const pokemonList = document.getElementById('pokemonList')
+
+
+pokeApi.getPokemons().then((pokemons) => {
+    const listItens = []
+
+  
+
+    for (let i = 0; i < pokemons.length; i++) {
+        const pokemon = pokemons[i];
+        listItens.push(convertPokemonToLi(pokemon))
+    }
+
+    console.log(listItens)
+  
+})
+
