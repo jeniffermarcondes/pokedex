@@ -2,6 +2,7 @@
     display: grid;
     grid-template-columns: 1fr;
     margin: 0;
+    margin-top: 60px;
     padding: 0;
     list-style: none;
 }
@@ -137,13 +138,14 @@
 }
 
 .pagination button {
-    padding: .25rem .5rem;
+    padding: .75rem .75rem;
     margin: .25rem 0;
     font-size: .625rem;
     color: #fff;
     background-color: #6c79db;
     border: none;
     border-radius: 1rem;
+    cursor: pointer;
 }
 
 @media screen and (min-width: 380px) {

@@ -1,18 +1,81 @@
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+
 }
 
 body {
-    background-color: #f6f8fc;
+    /* background-color: #f6f8fc; */
+    background-color: #c4cee2;
+
 }
+
 
 .content {
     width: 100vw;
     height: 100vh;
     padding: 1rem;
     background-color: #fff;
+
 }
+
+.content:hover {
+    box-shadow: 8px 8px 15px 12px rgba(205, 205, 205, 0.25);
+}
+
+.content .search-box {
+    position: absolute;
+    background-color: #c4cee2;
+    height: 50px;
+    padding: 0px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-box:hover>.search-text {
+    width: 320px;
+    padding-left: 20px;
+}
+
+.search-box:hover>.search-btn .loupe-white {
+    display: none;
+}
+
+.search-text {
+    background: none;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    width: 0;
+    padding: 0;
+    transition: 0.4s;
+}
+
+.search-btn {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+/* .loupe-white {
+    display: none;
+} */
+
+.logo {
+    background: url("./img-css/pokedex-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100px;
+}
+
 
 @media screen and (min-width: 992px) {
     .content {
