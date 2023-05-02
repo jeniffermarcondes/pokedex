@@ -19,7 +19,7 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
 }
 
 function getPhoto(pokeDetail) {
-    return pokeDetail.sprites.other.dream_world.front_default || 'assets/images/pokeball.png';
+    return pokeDetail.sprites.other.dream_world.front_default || 'assets/img/pokeball.png';
 }
 
 pokeApi.getPokemonDetail = (pokemon) => {
