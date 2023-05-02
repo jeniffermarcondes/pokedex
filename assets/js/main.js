@@ -10,10 +10,12 @@ function convertPokemonToLi(pokemon) {
         <li class="pokemon ${pokemon.type}">
             <span class="number">#${pokemon.number}</span>
             <span class="name">${pokemon.name}</span>
+
             <div class="detail">
                 <ol class="types">
                     ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
                 </ol>
+
                 <img src="${pokemon.photo}"
                      alt="${pokemon.name}">
             </div>
@@ -42,4 +44,16 @@ loadMoreButton.addEventListener('click', () => {
     } else {
         loadPokemonItens(offset, limit)
     }
-})
+});
+
+function findPokemon(nome) {
+    if (!nome.value) {
+        pokemonList.innerHTML = ''
+        loadPokemonItens(offset, limit);
+        return;
+    }
+    pokeApi.getAllPokemons(nome.value.toLowerCase()).then((pokemons = []) => {
+        const newHtml = pokemons.map(convertPokemonToLi).join('')
+        pokemonList.innerHTML = newHtml
+    })
+}
